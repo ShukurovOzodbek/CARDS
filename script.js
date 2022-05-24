@@ -49,7 +49,7 @@ form.onsubmit = (e) => {
 
 }
 
-let us = JSON.parse(localStorage.getItem('user'))
+// let us = JSON.parse(localStorage.getItem('user'))
 
 function submit() {
 
@@ -177,24 +177,38 @@ let form_chng = document.forms.chng
 
 let user3
 
-// form_chng.onsubmit = (e) => {
-//     e.preventDefault()
-//     let select = document.querySelector('#select')
-    
-//     user3 = {
-//         id: Math.random(),
-//         inner: select.value,
-//     }
-    
-//     let fm = new FormData(form_chng)
+form_chng.onsubmit = (e) => {
+    e.preventDefault()
+    let select = document.querySelector('#select')
+    let back = document.querySelector('.back')
+    let chng_box = document.querySelector('.chng_box')
+    let input = document.querySelectorAll('.bot input')
 
-//     fm.forEach((value, key) => {
-//         user3[key] = value
-//     });
+    user3 = {
+        id: Math.random(),
+        inner: select.value,
+    }
+    
+    let fm = new FormData(form_chng)
 
-//     console.log(user3);
+    fm.forEach((value, key) => {
+        user3[key] = value
+    });
+
+    setTimeout(() => {
+        chng_box.style.top = '-120%'
+        back.style.display = 'none'
+        setTimeout(() => {
+            back.style.opacity = '0'
+        }, 200);
+        input.forEach(element => {
+            element.checked = ''
+            element.style.display = 'none'
+        });
+    }, 200);
+    console.log(user3);
      
-// }
+}
 
 function reload(arr) { 
     crd.innerHTML = ''    
@@ -219,44 +233,44 @@ function reload(arr) {
             </div>
         </div>
         `
-        // chng()
-        // function chng() {
-        //     let chng_box = document.querySelector('.chng_box')
-        //     let back = document.querySelector('.back')
-        //     let chng = document.querySelector('.chng')
-        //     let input = document.querySelectorAll('.bot input')
-        //     chng.onclick = () => {
-        //         input.forEach((inp, index) => {
-        //             inp.style.display = 'block'
-        //             inp.onclick = () => {
-        //                 if(inp.checked = 'checked') {
-        //                     chng_box.style.top = '20%'
-        //                     back.style.display = 'block'
-        //                     setTimeout(() => {
-        //                         back.style.opacity = '1'
-        //                     }, 200);
-        //                     if(user3) {
-        //                         let idx = arr.findIndex(elem => elem.id === arr[index].id)
-        //                         arr.splice(idx, 1, user3)
-        //                         reload(arr)
-        //                         localStorage.cards = JSON.stringify(arr)
-        //                     }
-        //                 }
-        //                 back.onclick = () => {
-        //                     chng_box.style.top = '-120%'
-        //                     back.style.display = 'none'
-        //                     setTimeout(() => {
-        //                         back.style.opacity = '0'
-        //                         inp.checked = ''
-        //                     }, 200);
-        //                     setTimeout(() => {
-        //                         inp.style.display = 'none'
-        //                     }, 3000);
-        //                 }
-        //             }
-        //         });
-        //     } 
-        // }
+        chng()
+        function chng() {
+            let chng_box = document.querySelector('.chng_box')
+            let back = document.querySelector('.back')
+            let chng = document.querySelector('.chng')
+            let input = document.querySelectorAll('.bot input')
+            chng.onclick = () => {
+                input.forEach((inp, index) => {
+                    inp.style.display = 'block'
+                    inp.onclick = () => {
+                        if(inp.checked = 'checked') {
+                            chng_box.style.top = '20%'
+                            back.style.display = 'block'
+                            setTimeout(() => {
+                                back.style.opacity = '1'
+                            }, 200);
+                            if(user3) {
+                                let idx = arr.findIndex(elem => elem.id === arr[index].id)
+                                arr.splice(idx, 1, user3)
+                                reload(arr)
+                                localStorage.cards = JSON.stringify(arr)
+                            }
+                        }
+                        back.onclick = () => {
+                            chng_box.style.top = '-120%'
+                            back.style.display = 'none'
+                            setTimeout(() => {
+                                back.style.opacity = '0'
+                                inp.checked = ''
+                            }, 200);
+                            setTimeout(() => {
+                                inp.style.display = 'none'
+                            }, 3000);
+                        }   
+                    }
+                });
+            } 
+        }
         let img = document.querySelectorAll('.bot img')
 
         let del = document.querySelector('.del')
