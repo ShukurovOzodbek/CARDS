@@ -214,8 +214,6 @@ function reload(arr) {
     crd.innerHTML = ''    
     for(let item of arr) {
         let ad = JSON.parse(localStorage.getItem('user'))
-
-
         crd.innerHTML += `
         <div class="card ">
             <div class="top_card">
@@ -291,8 +289,6 @@ function reload(arr) {
 }
 
 let ad2 = JSON.parse(localStorage.getItem('cards'))
-
-
 
 if(ad2) {
     if(ad2.length > 0) {
