@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="form">
+        <form action="" name="regist" >
+            <h1>Регистрация</h1>
+            <input type="text" name="email" placeholder="email">
+            <input type="text" name="name" placeholder="name">
+            <input type="text" name="surname" placeholder="surname (not neccessery)">
+            <input type="text" name="password" placeholder="password">
+            <button>Регистрация</button>
+        </form>
+    </div>
+    <div id="main" class="main">
+        <div class="top">
+            <div class="your">
+                <h2>Ваши Карты: <span class="name_polz"> {{ name }} </span></h2>
+            </div>
+        </div>
+        <div class="cards_div">
+            <div class="cards">
+                <div class="crd">
+
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="btn add" >Добавить карту</button>
+            <button class="btn del" >Удалить карту</button>
+            <button class="btn chng" >Изменить карту</button> 
+        </div>
+        <!-- <div class="friends">
+            <span>Ваши друзья: </span>
+            <ul>
+                <li>
+                    <div class="circle"></div>
+                    <div class="name">
+                        <h4>Daler Ravshanov</h4>
+                        <p>124 карт</p>
+                    </div>
+                    <img src="./more_horiz_FILL0_wght400_GRAD0_opsz48.png" alt="">
+                    <button class="delete">Удалить Из Друзей</button>
+                </li>
+            </ul>
+        </div> -->
+        <div class="modal">
+            <div class="add_box">
+                <div class="card">
+                    <div class="top_card">
+                        <h2>******** СУМ</h2>
+                        <code>NAME CARD</code>
+                    </div>
+                    <div class="center">
+                        <span class="numb">**** **** **** ****</span>
+                    </div>
+                    <div class="bot">
+                        <span class="name">Anis Akhmedov</span>
+                        <span class="year">**/**</span>
+                    </div>
+                </div>
+                <form name="add" action="">
+                    <input type="text" name="number" value="2112 1221 2112 2121">
+                    <input type="text" name="year" value="22/78">
+                    <select name="" class="sel" id="">
+                        <option value="VISA">VISA</option>                        
+                        <option value="MASTERCARD">MASTERCARD</option>                        
+                        <option value="HUMO">HUMO</option>                        
+                    </select>
+                    <button class="soxr">Добавить</button>
+                </form>
+            </div>
+            <div class="chng_box">
+                <div class="card">
+                    <div class="top_card">
+                        <h2>234234 СУМ</h2>
+                        <code>NAME CARD</code>
+                    </div>
+                    <div class="center">
+                        <span class="numb">3232 3223 2332 2323</span>
+                    </div>
+                    <div class="bot">
+                        <span class="name">Anis Akhmedov</span>
+                        <span class="year">**/**</span>
+                    </div>
+                </div>
+                <form name="chng" action="">
+                    <input type="text" name="number" value="2112 1221 2112 2121">
+                    <input type="text" name="year" value="22/78">
+                    <select name="" id="select" id="">
+                        <option value="VISA">VISA</option>                        
+                        <option value="MASTERCARD">MASTERCARD</option>                        
+                        <option value="HUMO">HUMO</option>                        
+                    </select>
+                    <button class="soxr">Сохранить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="back"></div>
+    <div class="back2"></div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
